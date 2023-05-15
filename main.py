@@ -7,7 +7,6 @@ import logging
 
 '''
 
- * @author ELEVEN28th
  * @creat 2023-3-10
  
 '''
@@ -31,7 +30,7 @@ def read_data():
         goods_read.append(items)
 
 
-def print_hi():
+def buffcrawl_hi():
     with open('cookie.txt', 'r') as f:
         cookie_str = f.read().strip()
 
@@ -147,4 +146,4 @@ def print_hi():
 
         time.sleep(2)
 
-print_hi()
+buffcrawl_hi()
