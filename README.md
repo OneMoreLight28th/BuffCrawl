@@ -1,8 +1,11 @@
 # Buff市场CSGO商品信息获取
 这是一个使用Python编写的CSGO物品信息爬虫，使用了Buff交易平台的API。通过输入物品ID，爬虫能够获取该物品的历史交易记录以及所有交易记录的详细信息，如交易时间、价格、饰品磨损度、贴纸等。
-| 爬虫 | 前端 | 后端 |
-| ------ | ------ | ------ |
-| https://github.com/OneMoreLight28th/BuffCrawl  | https://github.com/OneMoreLight28th/BuffCrawlWeb  | https://github.com/OneMoreLight28th/BuffCrawlWebspring |
+
+| 项目  |       网址                       |
+|---|------------------------------|
+| 爬虫 | https://github.com/OneMoreLight28th/BuffCrawl |
+| 前端 | https://github.com/OneMoreLight28th/BuffCrawlWeb |
+| 后端 | https://github.com/OneMoreLight28th/BuffCrawlWebspring |
 
 
 ## 环境要求
