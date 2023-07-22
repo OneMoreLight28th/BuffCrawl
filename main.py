@@ -7,6 +7,7 @@ import logging
 
 '''
 
+ * @author ELEVEN28th
  * @creat 2023-3-10
  
 '''
@@ -112,7 +113,7 @@ def buffcrawl_hi():
                 item_data = {
                     'inspection_img': requests.get(url=inspection_img_url).content,  # 获取检视图图片数据并保存
                     'itemfloat': itemfloat,
-                    'paintseed':paintseed,
+                    'paintseed': paintseed,
                     'price': price,
                     'transaction_time': transaction_time,
                     'stickers': stickers_info
@@ -132,18 +133,19 @@ def buffcrawl_hi():
         })
 
         # 一次性更新所有文档
-        for id in set(g['id'] for g in data_to_save):
-            query = {'id': id}
-            updates = []
-            for data in data_to_save:
-                if data['id'] == id:
-                    updates.append({
-                        '$set': {
-                            'container.' + str(data['timestamp']): data['data']
-                        }
-                    })
-            collection.update_many(query, updates)
+    for id in set(g['id'] for g in data_to_save):
+        query = {'id': id}
+        updates = []
+        for data in data_to_save:
+            if data['id'] == id:
+                updates.append({
+                    '$set': {
+                        'container.' + str(data['timestamp']): data['data']
+                    }
+                })
+        collection.update_many(query, updates)
 
-        time.sleep(2)
+    time.sleep(2)
+
 
 buffcrawl_hi()
