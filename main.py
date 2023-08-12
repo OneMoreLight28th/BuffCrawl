@@ -48,7 +48,7 @@ def buffcrawl_hi():
 
     orignal_url = 'https://buff.163.com/api/market/goods/bill_order?game=csgo&goods_id='
 
-    data_to_save = []  # 用于存储要保存到数据库的数据
+    data_to_save = []  # 存储要保存到数据库的数据
     timestamp = int(time.time())  # 时间戳
 
     for i in range(len(goods_read)):
@@ -65,7 +65,7 @@ def buffcrawl_hi():
             logging.error(f"Error occurred while getting HTML response for url: {all_id_url}. {e}")
             continue
 
-        item_list = []  # 用于保存当前物品的所有数据
+        item_list = []  # 保存当前物品的所有数据
         for item in html_items:
             try:
                 inspection_img_url = item['asset_info']['info'].get('inspect_url', '')  # 获取检视图链接
@@ -107,7 +107,7 @@ def buffcrawl_hi():
                     stickers_info.append(sticker_info)
                 except requests.exceptions.RequestException as e:
                     logging.exception(f"Request exception occurred while accessing sticker image : {all_id_url}.{e}")
-                    continue  # 这个请求失败，继续下一个循环
+                    continue  # 这个请求失败
 
             try:
                 item_data = {
